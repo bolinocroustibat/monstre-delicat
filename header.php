@@ -1,21 +1,16 @@
 <meta charset="UTF-8" />
 
-<title>Le générateur de fake news</title>
+<title>Monstre délicat</title>
 
-<meta name="Description" content="<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo "Engendrez des rumeurs foireuses d'extrême-droite !";} ?>" />
-<meta name="Generator" content="Notepad++" />
+<meta name="Description" content="<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo "générateur de design absurde sous absinthe";} ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 
 <meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="Le générateur de fake news" />
+<meta property="og:site_name" content="générateur de design absurde sous absinthe" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="<?php echo($actual_link);?>" />
-<meta property="og:title" content='<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo 'Le générateur de fake news';} ?>' />
-<meta property="og:description" content='<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo 'Engendrez des rumeurs foireuses d’extrême-droite !';} ?>' />
-<meta property="og:image" content='<?php if(isset($picture) && $picture!=''){echo 'http://adriencarpentier.com/fake-news/photos/'.$picture;}else{echo 'http://www.adriencarpentier.com/fake-news/style/background_470x314.jpg';} ?>' />
-<meta property="og:image:width" content="470" />
-<meta property="og:image:height" content="314" />
-<meta property="fb:app_id" content="1542429205992863" />
+<meta property="og:title" content='<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo 'Monstre délicat';} ?>' />
+<meta property="og:description" content='<?php if(isset($sentence) && $sentence!=''){echo addslashes($sentence);}else{echo 'générateur de design absurde sous absinthe';} ?>' />
 
 <link rel="apple-touch-icon" sizes="180x180" href="style/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="style/favicons/favicon-32x32.png" sizes="32x32">

@@ -61,19 +61,15 @@ if(isset($_GET['hash']) && $_GET['hash']!='') { // Si on recoit un hash
 							$(".image").attr("src","./photos/"+picture);
 							$(".project").html(sentence);
 							history.replaceState(sentence, sentence, hash+'.html'); // change l'URL dynamiquement
-							document.getElementById('ShareFacebook').href = 'http://www.facebook.com/sharer/sharer.php?u='+window.location.href; // met à jour le lien de partage Facebook
-							document.getElementById('ShareTwitter').href = 'http://twitter.com/?status='+sentence+' adriencarpentier.com/fake-news/'+hash+'.html'; // met à jour le lien de partage Twitter
 						}
 					}
 				})
 				$(".project-wrapper").css("visibility", "visible");
-				$(".share-wrapper").css("visibility", "visible");
 			});
 			$(".image, .project, .site").show("fade");
 		}
 		function read_data(sentence, picture) { // si on a reçu les données grâce au hash dans l'URL, utilisée en argument du body onload
 			$('.project-wrapper').css('visibility', 'visible');
-			$('.share-wrapper').css('visibility', 'visible');
 			$('.image').attr('src','./photos/'+picture);
 			$('.project').html(sentence);
 		}
@@ -83,36 +79,14 @@ if(isset($_GET['hash']) && $_GET['hash']!='') { // Si on recoit un hash
 
 <body<?php if(isset($sentence) && $sentence!='' && isset($picture) && $picture!=''){echo ' onload="read_data(\''.$sentence.'\',\''.addslashes($picture).'\')"';} ?>>
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-2981674-13', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
-		
 	<div id="main-wrapper">
 
-		<h1>Le générateur de<span class="big_h1">fake news</span></h1>
+		<h1>Monstre délicat</h1>
 
-		<input type="button" onClick="generate_data()" value="engendrer une rumeur foireuse">
-		<div class="project-wrapper" style="visibility:hidden;">
-			<img class="image" src="" alt="" />
-			<div class="project"></div>
-			<div class="site">adriencarpentier.com</div>
-		</div>
-		<div class="share-wrapper">
-			<a id="ShareFacebook" href="http://www.facebook.com/sharer/sharer.php<?php if(isset($actual_link) && $actual_link!=''){echo '?u='.$actual_link;}?>">Partager sur Facebook</a><a id="ShareTwitter" href="http://twitter.com/?status=<?php if(isset($sentence) && $sentence!=''){echo $sentence.' adriencarpentier.com/fake-news/'.$hash.'.html';}?>">Partager sur Twitter</a>
-		</div>	
-
+		WIP
+	
 	</div>
 	
-	<div id="bottom-right-wrapper">
-		Suivez <a href="https://twitter.com/_RealFakeNews">@_RealFakeNews</a> sur Twitter
-	</div>
 
 </body>
 
