@@ -3,31 +3,14 @@
 class Sentence {
 
 	private $all_sentences_struc_array;
-	private $person_array;
 	private $sentence_struc;
 	private $sentence_id;
 	private $sentence_string;
 	
-	public function __construct($gid_table, $sheet_name, $person_array, $min_line = NULL, $max_line = NULL) {
-		$this->person_array = $person_array;
-		$this->all_sentences_struc_array = $this->csvSentenceStructuresToArray($sheet_name); // get all sentence structures in an array
-		if (($min_line === NULL) && ($max_line === NULL)){ // If there is no specific sentence range ID wanted...
-			$random_row = rand (0,count($this->all_sentences_struc_array)-1); // choose one random sentence structure
-			$this->sentence_id = $random_row;
-		}
-		else {
-			$random_row = rand ($min_line-5,$max_line-5); // choose one random sentence structure within the range
-			$this->sentence_id = $random_row; // set the sentence structure ID from the argument
-		}
-		if (isset($this->all_sentences_struc_array[$this->sentence_id])){ // if the line exists (if the array structure exists)
-			$sentence_struc = $this->all_sentences_struc_array[$this->sentence_id]; // set the sentence structure 1-dimension array for this object
-			$this->sentence_struc = $sentence_struc; // update the sentence structure of this object
-			$sentence_string = $this->createSentence($gid_table,$sentence_struc, $person_array); // create sentence from sentence structure
-			$this->sentence_string = $this->correctSentence($sentence_string);		
-		} else {
-			$this->sentence_struc = "ERREUR, CETTE STRUCTURE DE PHRASE N'EST PAS DEFINIE";
-			$this->sentence_string = "ERREUR, CETTE STRUCTURE DE PHRASE N'EST PAS DEFINIE";
-		}
+	public function __construct() {
+		$this->all_sentences_struc_array = $this->csvSentenceStructuresToArray(); // get all sentence structures in an array
+		$random_row = rand (0,count($this->all_sentences_struc_array)-1); // choose one random sentence structure
+		$this->sentence_id = $random_row;
 	}
 	
 	public function getSentenceStructArray() {
